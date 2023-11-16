@@ -1,0 +1,20 @@
+.btn-edit {
+  background-color: transparent;
+  color: black;
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: #f285a1;
+}
+
+.btn-submit:hover{
+    background-color: #f285a1;
+    color: white;
+}
+
+.btn-submit{
+    background-color: transparent;
+    color: #f285a1;
+    border-color: #f285a1;
+}

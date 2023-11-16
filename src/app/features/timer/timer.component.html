@@ -1,0 +1,66 @@
+<div class="details col mt-4 py-4 px-3 rounded-3 bg-white" style="height: 320px;">
+    <div class="timer d-flex gap-4 px-3 pe-5">
+        <h4 class="flex-grow-1 border-bottom fs-3 fw-bold">Focus Session</h4>
+    </div>
+    <div class="timer mt-5 d-flex justify-content-center text-center gap-4">
+        <div class="hour">
+            <h1 class="fs-1 number" id="timer-hour">{{ hours }}</h1>
+            <span>Hours</span>
+        </div>
+        <div class="min">
+            <h1 class="fs-1 number" id="timer-min">{{ minutes }}</h1>
+            <span>Minutes</span>
+        </div>
+        <div class="sec">
+            <h1 class="fs-1 number" id="timer-sec">{{ seconds }}</h1>
+            <span>Seconds</span>
+        </div>
+    </div>
+    <div class="btns d-flex justify-content-center text-center gap-4 rounded mt-2">
+        <button class="btn rounded-circle btn-pink text-dark-pink" type="button" (click)="startTimer()"
+            [hidden]="isTimerRunning">
+            <i class="bi bi-play-fill h4"></i>
+        </button>
+        <button class="btn rounded-circle btn-pink text-dark-pink" type="button" (click)="stopTimer()"
+            [hidden]="!isTimerRunning">
+            <i class="bi bi-pause-fill h4"></i>
+        </button>
+        <button class="btn rounded-circle btn-green text-light-green" type="button" (click)="resetTimer()">
+            <i class="bi bi-stop-fill h4"></i>
+        </button>
+        <button class="btn rounded-circle btn-pink text-dark-pink" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasSetTimer">
+            <i class="bi bi-clock-fill h5"></i>
+        </button>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-top m-3 m-md-5 rounded" tabindex="-1" id="offcanvasSetTimer"
+    aria-labelledby="offcanvasSetTimer">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasSetTimer">Set Timer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <form>
+            <div class="mb-3">
+                <label for="hoursInput" class="form-label">Hours</label>
+                <input #hoursInput type="number" class="form-control" id="hoursInput" min="0" max="24" tabindex="1">
+            </div>
+            <div class="mb-3">
+                <label for="minutesInput" class="form-label">Minutes</label>
+                <input #minutesInput type="number" class="form-control" id="minutesInput" min="0" max="59" tabindex="2">
+            </div>
+            <div class="mb-3">
+                <label for="secondsInput" class="form-label">Seconds</label>
+                <input #secondsInput type="number" class="form-control" id="secondsInput" min="0" max="59" tabindex="3">
+            </div>
+        </form>
+        <div class="offcanvas-footer d-flex justify-content-center justify-content-md-end">
+            <button type="button" class="btn mt-2 mt-md-0 btn-pink" (click)="setTimer()" data-bs-dismiss="offcanvas">Set
+                Timer</button>
+            <button type="button" class="btn mt-2 mt-md-0 ms-2 btn-black" (click)="cancelTimer()"
+                data-bs-dismiss="offcanvas" id="cancelTimerBtn">Cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="navbar sticky-top navbar-expand-lg cf-1">
+  <div class="container sticky-top nav-font cf-1">
+    <a class="navbar-brand ms-3 logo mt-1" routerLink="./">
+
+      <img
+      [src]="heroPath + 'logo.png'"
+      style="width: 95px" alt=""/>
+    </a>
+
+    <div
+      class="navbar-collapse collapse justify-content-end"
+      id="navbarNavAltMarkup"
+    >
+      <div class="navbar-nav fs-10">
+        <a class="nav-link nav-hov" routerLink="/features">Features</a>
+        <a class="nav-link nav-hov" routerLink="/help">Help</a>
+        <a class="nav-link nav-hov" routerLink="/about">About Us</a>
+      </div>
+    </div>
+
+    <a
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      href="#offcanvasNavbar"
+      role="button"
+      aria-controls="offcanvasNavbar"
+      data-bs-target="#offcanvasNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </a>
+
+    <!-- Offcanvas -->
+    <div
+      class="offcanvas offcanvas-end d-lg-none border-0 offcanvas-size"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header d-flex justify-content-between">
+        <i class="bi bi-person-circle fs-1 h1"></i>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <div class="navbar-nav fs-13">
+          <a class="nav-link nav-hov" routerLink="/features">
+            <h6>Features</h6>
+          </a>
+          <a class="nav-link nav-hov" routerLink="/help">
+            <h6>Help</h6>
+          </a>
+          <a class="nav-link nav-hov" routerLink="/about">
+            <h6>About Us</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

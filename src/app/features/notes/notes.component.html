@@ -1,0 +1,51 @@
+<section class="mb-5">
+  <div class="details_note container rounded-3 mt-2 pb-3 bg-white" style="max-height:645px">
+    <div class="mt-4 p-0">
+      <div class="justify-content-center d-flex">
+        <div class="align-items-center d-flex flex-column flex-lg-row pt-md-2 w-100 justify-content-center">
+          <h4 class="mx-3 fs-3 fw-bold d-flex align-items-center mt-3">
+            To Do List
+          </h4>
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Type Here..."
+          aria-label="To-Do List"
+          aria-describedby="button-addon2"
+          [(ngModel)]="newTodo"
+        />
+        <button class="btn btn-submit"
+          (click)="editMode ? updateTodo() : saveTodo()"
+          type="submit"
+          name="submit"
+          id="submit"
+          value="submit"
+          data-bs-dismiss="offcanvas"
+        >
+          {{ editMode ? 'Edit' : 'Add To do' }}
+        </button>
+      </div>
+      <div class="container-fluid" >
+        <div class="rounded-3" style="overflow-y: scroll;">
+            <div class="card-body py-2 overflow-auto" id="notesContainer" style="max-height: 500px;">
+
+            <div class="row my-4 mx-2" *ngFor="let todo of todos; let i = index">
+              <div class="col" style="max-width: 25px;">{{ i + 1 }}</div>
+              <div class="col text-truncate mx-4">{{ todo.name }}</div>
+              <div class="col d-flex justify-content-end gap-2" style="float: right;">
+                <button class="gap-3 btn-edit" data-bs-toggle="offcanvas"
+                  data-bs-target="#offCanvasEdit" (click)="startEdit(i)">
+                  Edit
+                </button>
+                <button class="me-1 btn-delete" (click)="remove(i)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

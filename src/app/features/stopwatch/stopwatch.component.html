@@ -1,0 +1,84 @@
+    <div class="details col mt-4 py-4 px-3 rounded-3 bg-white">
+        <div class=" d-flex gap-4 px-3 pe-5">
+            <h4 class="flex-grow-1 border-bottom fs-3 fw-bold">Today</h4>
+        </div>
+        <div class="my-3">
+            <div class="subjects gap-2 my-4">
+                <div class="row row-cols-lg-2">
+                    <div class="col-md-12 d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center">
+                            <button class="bg-transparent" (click)="startStopwatch()" [disabled]="isRunning"
+                                [class.disabled]="isRunning" *ngIf="!hideStartButton">
+                                <i class="bi bi-play-circle-fill h3"></i>
+                            </button>
+                            <button class="bg-transparent" (click)="pauseStopwatch()" [disabled]="!isRunning"
+                                [class.disabled]="!isRunning" *ngIf="hidePauseButton">
+                                <i class="bi bi-pause-circle-fill h3"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <h5 class="m-0" [style.color]="'#4f4f4f'">Major</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-12 p-0 d-flex justify-content-between">
+                        <div class="sw d-flex ps-5">
+                            <div>
+                                <p class="fs-5 number">{{ minutes }}</p>
+                            </div>
+                            <p class="colon fs-5">.</p>
+                            <div>
+                                <p class="fs-5 number">{{ seconds }}</p>
+                            </div>
+                            <p class="colon fs-5">.</p>
+                            <div>
+                                <p class="fs-6 number">{{ milliseconds }}</p>
+                            </div>
+                        </div>
+                        <div class="float-end">
+                            <button class="bg-transparent" (click)="resetStopwatch()" [disabled]="isRunning">
+                                <i class="bi bi-arrow-counterclockwise text-black h5 mx-3" [id]="'reset-stopwatch'"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-lg-2">
+                    <div class="col-md-12 d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center">
+                            <button class="bg-transparent" (click)="startStopwatch2()" [disabled]="isRunning2"
+                                [class.disabled]="isRunning2" *ngIf="!hideStartButton2">
+                                <i class="bi bi-play-circle-fill h3"></i>
+                            </button>
+                            <button class="bg-transparent" (click)="pauseStopwatch2()" [disabled]="!isRunning2"
+                                [class.disabled]="!isRunning2" *ngIf="hidePauseButton2">
+                                <i class="bi bi-pause-circle-fill h3"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <h5 class="m-0" [style.color]="'#4f4f4f'">Major 2</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-12 p-0 d-flex justify-content-between">
+                        <div class="sw d-flex ps-5">
+                            <div>
+                                <p class="fs-5 number">{{ minutes2 }}</p>
+                            </div>
+                            <p class="colon fs-5">.</p>
+                            <div>
+                                <p class="fs-5 number">{{ seconds2 }}</p>
+                            </div>
+                            <p class="colon fs-5">.</p>
+                            <div>
+                                <p class="fs-6 number">{{ milliseconds2 }}</p>
+                            </div>
+                        </div>
+                        <div class="float-end">
+                            <button class="bg-transparent" (click)="resetStopwatch2()" [disabled]="isRunning2">
+                                <i class="bi bi-arrow-counterclockwise text-black h5 mx-3" [id]="'reset-stopwatch2'"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
